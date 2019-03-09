@@ -1,0 +1,118 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Classicthesis-Styled CV
+% LaTeX Template
+% Version 1.0 (22/2/13)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Alessandro Plasmati
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{scrartcl}
+
+\reversemarginpar % Move the margin to the left of the page 
+
+\newcommand{\leftmarg}[1]{\marginpar{\raggedleft\itshape\small#1}} % New command defining the margin text style
+\newcommand{\header}[1]{\vspace{1em}\noindent\textcolor{Maroon}{\spacedlowsmallcaps{#1}}\vspace{1em}}
+
+\usepackage[nochapters]{classicthesis} % Use the classicthesis style for the style of the document
+\usepackage[LabelsAligned]{currvita} % Use the currvita style for the layout of the document
+\usepackage{fontawesome}
+
+\renewcommand{\cvheadingfont}{\LARGE\color{Maroon}} % Font color of your name at the top
+
+\usepackage{bibentry}
+
+\hypersetup{colorlinks, breaklinks} % Set link colors
+
+\newlength{\datebox}\settowidth{\datebox}{Spring 2011} % Set the width of the date box in each block
+
+\newcommand{\entry}[2]{\noindent\hangindent=2em\hangafter=0\leftmarg{#1}#2}
+\newcommand{\NewEntry}[3]{\noindent\hangindent=2em\hangafter=0\parbox{\datebox}{\small
+\textit{#1}}\hspace{1.5em} \leftmarg{#2} #3 % Define a command for each new block - change spacing and font sizes here: #1 is the left margin, #2 is the italic date field and #3 is the position/employer/location field
+\vspace{0.5em}} % Add some white space after each new entry
+
+\newcommand{\entrydetails}[1]{\hangindent=2em\hangafter=0\noindent\raggedright\footnotesize{#1}\par\normalsize\vspace{1em}} % Define a command for entrydetailss of each entry - change spacing and font sizes here
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\thispagestyle{empty} % Stop the page count at the bottom of the first page
+
+\begin{cv}{\spacedallcaps{George Stelle}} \vspace{1em} % Your name
+
+\header{Personal Information} % Personal information heading
+
+\entry{}{\faEnvelopeO \hspace{2em} stelleg@lanl.gov} \\ % Email address
+\entry{}{\faPhone \hspace{2em} +1 (505) 750 8506}% \ \ $\cdotp$\ \ (M) +1 (000) 111 1112} % Phone number(s)
+
+\header{Work} 
+
+\entry{2016-Present}{Scientist II} \\
+\entrydetails{\textsc{Los Alamos National Laboratory} \\ Research and develop compilers and programming languages for high
+performance supercomputers}
+\entry{2013-2016}{Graduate Student Intern} \\
+\entrydetails{\textsc{Sandia National Laboratories} \\ Research and develop
+lightweight threading libraries for high performance concurrent computations on
+NUMA architectures}
+\entry{2009--2013}{Research Assistant} \\
+\entrydetails{\textsc{University of New Mexico} \\ Research and develop
+call-by-need compilers, network growth models, control flow analysis, and type
+systems}
+
+
+\header{Education} \\
+\entry{April 2019}{\textsc{PhD}, Computer Science} \\
+\entrydetails{University of New Mexico \\ Department of Computer Science} 
+\NewEntry{Nov. 2013}{University of \\ New Mexico}{\textsc{MS}, Computer Science} \\
+\entrydetails{Department of Computer Science}
+\NewEntry{June 2008}{University of British Columbia}{\textsc{BS}, Computational
+Intelligence and Design}\\
+\entrydetails{Department of Cognitive Systems}
+
+\header{Dissertation} \\
+\entry{April 2019}{Shared-Environment Call-by-Need}
+
+\header{Publications} \vspace{-5em}
+\bibliographystyle{unsrt}
+\nobibliography{ref}
+%\nocite{*}
+\entry{2018}{\bibentry{lee2018correctness}} \\ \vspace{0.5em}
+\entry{2017}{\bibentry{stelle2017openmpir}} \\ \vspace{0.5em}
+\entry{}{\bibentry{evans2017scheduling}}
+
+%\bibentry{evans2017scheduling} \\ \vspace{0.5em}
+%\bibentry{stelle2016cem} \\ \vspace{0.5em}
+
+\vspace{1em}
+
+%----------------------------------------------------------------------------------------
+%	LANGUAGE SKILLS
+%----------------------------------------------------------------------------------------
+
+\spacedlowsmallcaps{Language Skills}\vspace{1em}
+
+\entrydetails{\leftmarg{Basic} Java, Scala, Fortran}
+
+\entrydetails{\leftmarg{Intermediate} Python, Javascript, \LaTeX, HTML}
+
+\entrydetails{\leftmarg{Advanced} Haskell, C, C++, x86\_64, Coq}
+
+%------------------------------------------------
+
+\vspace{1em} % Extra space between major sections
+
+\end{cv}
+
+\end{document}
