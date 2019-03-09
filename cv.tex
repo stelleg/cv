@@ -22,16 +22,19 @@
 
 \reversemarginpar % Move the margin to the left of the page 
 
-\newcommand{\leftmarg}[1]{\marginpar{\raggedleft\itshape\small#1}} % New command defining the margin text style
-\newcommand{\header}[1]{\vspace{1em}\noindent\textcolor{Maroon}{\spacedlowsmallcaps{#1}}\vspace{1em}}
-
-\usepackage[nochapters]{classicthesis} % Use the classicthesis style for the style of the document
-\usepackage[LabelsAligned]{currvita} % Use the currvita style for the layout of the document
-\usepackage{fontawesome}
-
-\renewcommand{\cvheadingfont}{\LARGE\color{Maroon}} % Font color of your name at the top
+\newcommand{\leftmarg}[1]{\marginpar{\raggedleft\itshape\small#1}} 
+\newcommand{\header}[1]{\vspace{1em}\noindent\textcolor{Maroon}
+{\spacedlowsmallcaps{#1}}\vspace{1em}}
 
 \usepackage{bibentry}
+\makeatletter\let\saved@bibitem\@bibitem\makeatother
+\usepackage[nochapters]{classicthesis} 
+\makeatletter\let\@bibitem\saved@bibitem\makeatother
+\usepackage[LabelsAligned]{currvita} % Use the currvita style for the layout of the document
+\usepackage{fontawesome}
+\usepackage{amsmath}
+
+\renewcommand{\cvheadingfont}{\LARGE\color{Maroon}} % Font color of your name at the top
 
 \hypersetup{colorlinks, breaklinks} % Set link colors
 
@@ -51,67 +54,57 @@
 \thispagestyle{empty} % Stop the page count at the bottom of the first page
 
 \begin{cv}{\spacedallcaps{George Stelle}} \vspace{1em} % Your name
+\noindent\faEnvelopeO $\;$ stelleg@lanl.gov $\cdotp$ \faPhone $\;$ +1 (505) 750 8506
+\vspace{1em}
 
-\header{Personal Information} % Personal information heading
-
-\entry{}{\faEnvelopeO \hspace{2em} stelleg@lanl.gov} \\ % Email address
-\entry{}{\faPhone \hspace{2em} +1 (505) 750 8506}% \ \ $\cdotp$\ \ (M) +1 (000) 111 1112} % Phone number(s)
-
-\header{Work} 
+\header{Employment} 
 
 \entry{2016-Present}{Scientist II} \\
 \entrydetails{\textsc{Los Alamos National Laboratory} \\ Research and develop compilers and programming languages for high
 performance supercomputers}
-\entry{2013-2016}{Graduate Student Intern} \\
+\entry{2013-2016}{Graduate Student Researcher} \\
 \entrydetails{\textsc{Sandia National Laboratories} \\ Research and develop
-lightweight threading libraries for high performance concurrent computations on
-NUMA architectures}
-\entry{2009--2013}{Research Assistant} \\
+lightweight threading libraries for high performance computing on NUMA
+architectures}
+\entry{2009-2013}{Graduate Research Assistant} \\
 \entrydetails{\textsc{University of New Mexico} \\ Research and develop
 call-by-need compilers, network growth models, control flow analysis, and type
 systems}
 
-
 \header{Education} \\
-\entry{April 2019}{\textsc{PhD}, Computer Science} \\
-\entrydetails{University of New Mexico \\ Department of Computer Science} 
-\NewEntry{Nov. 2013}{University of \\ New Mexico}{\textsc{MS}, Computer Science} \\
-\entrydetails{Department of Computer Science}
-\NewEntry{June 2008}{University of British Columbia}{\textsc{BS}, Computational
-Intelligence and Design}\\
-\entrydetails{Department of Cognitive Systems}
+\entry{April 2019}{\textsc{PhD} $:$ Computer Science} \\
+\entrydetails{\textsc{University of New Mexico} $\boldsymbol{\cdot}$ Department of Computer Science} 
+\entry{Nov. 2013}{\textsc{MS} $:$ Computer Science} \\
+\entrydetails{\textsc{University of New Mexico} $\boldsymbol{\cdot}$ Department of Computer Science}
+\entry{June 2008}{\textsc{BS} $:$ Computational Intelligence and Design}\\
+\entrydetails{\textsc{University of British Columbia} $\boldsymbol{\cdot}$ Department of Cognitive Systems}
 
 \header{Dissertation} \\
-\entry{April 2019}{Shared-Environment Call-by-Need}
+\entry{April 2019}{Shared-Environment Call-by-Need} \\
+\entrydetails{\textsc{Advisor:} Darko Stefanovic}
 
-\header{Publications} \vspace{-5em}
+\header{Publications} \\ % \vspace{-5em}
 \bibliographystyle{unsrt}
 \nobibliography{ref}
-%\nocite{*}
-\entry{2018}{\bibentry{lee2018correctness}} \\ \vspace{0.5em}
-\entry{2017}{\bibentry{stelle2017openmpir}} \\ \vspace{0.5em}
-\entry{}{\bibentry{evans2017scheduling}}
+\entry{2018}{\small{\bibentry{stelle2018verifiably}}} \\ \vspace{0.5em}
+\entry{}{\small{\bibentry{lee2018correctness}}} \\ \vspace{0.5em}
+\entry{2017}{\small{\bibentry{stelle2017openmpir}}} \\ \vspace{0.5em}
+\entry{}{\small{\bibentry{evans2017scheduling}}} \\ \vspace{0.5em}
+\entry{2016}{\small{\bibentry{stelle2016cem}}} \\ \vspace{0.5em}
+\entry{2014}{\small{\bibentry{stelle2014hardware}}} \\ \vspace{0.5em}
+\entry{2013}{\small{\bibentry{hofmeyr2013modeling}}} \\ \vspace{0.5em}
+\entry{2012}{\small{\bibentry{edwards2012beyond}}} \\ \vspace{1em}
+\normal
 
-%\bibentry{evans2017scheduling} \\ \vspace{0.5em}
-%\bibentry{stelle2016cem} \\ \vspace{0.5em}
+\header{Invited Talks} \\
+\entry{2018}{Verifiably Lazy: Verified Compilation of Call-by-Need} \\
+\entrydetails{\textsc{IFL 2018}}
 
-\vspace{1em}
+\header{Language Skills}
 
-%----------------------------------------------------------------------------------------
-%	LANGUAGE SKILLS
-%----------------------------------------------------------------------------------------
-
-\spacedlowsmallcaps{Language Skills}\vspace{1em}
-
-\entrydetails{\leftmarg{Basic} Java, Scala, Fortran}
-
-\entrydetails{\leftmarg{Intermediate} Python, Javascript, \LaTeX, HTML}
-
+\entrydetails{\leftmarg{Basic} Java, Scala, Fortran} 
+\entrydetails{\leftmarg{Intermediate} Python, Javascript, \LaTeX, HTML} 
 \entrydetails{\leftmarg{Advanced} Haskell, C, C++, x86\_64, Coq}
-
-%------------------------------------------------
-
-\vspace{1em} % Extra space between major sections
 
 \end{cv}
 
