@@ -12,7 +12,7 @@
 \newcommand{\leftmarg}[1]{\marginpar{\raggedleft\itshape\small#1}} 
 \newcommand{\header}[1]{\vspace{1em}\noindent\textcolor{Maroon}{\spacedlowsmallcaps{#1}}\par\vspace{1em}}
 \renewcommand{\cvheadingfont}{\LARGE\color{Maroon}} % Font color of your name at the top
-\newcommand{\entry}[3]{\noindent\hangindent=2em\hangafter=0\leftmarg{#1}#2\par\hangindent=2em\hangafter=0\noindent\raggedright\footnotesize{#3}\par\normalsize\vspace{1em}} 
+\newcommand{\entry}[3]{\begin{samepage}{\noindent\hangindent=2em\hangafter=0\leftmarg{#1}#2\par\hangindent=2em\hangafter=0\noindent\raggedright\footnotesize{#3}\par\normalsize\vspace{1em}}\end{samepage}}
 
 \reversemarginpar 
 \hypersetup{hidelinks} 
@@ -27,9 +27,9 @@
 \faEnvelopeO $\;$ \href{mailto:stelleg@lanl.gov}{\texttt{stelleg@lanl.gov}}
 $\; \bullet \; $ 
 \faPhone $\;$ \href{tel:15057508506}{+1 (505) 750 8506} 
-$\; \bullet \; $ 
-\faGlobe $\;$
-\href{http://cs.unm.edu/~stelleg}{\texttt{cs.unm.edu/$\scriptstyle\mathtt{\sim}$stelleg}}
+%$\; \bullet \; $ 
+%\faGlobe $\;$
+%\href{http://cs.unm.edu/~stelleg}{\texttt{cs.unm.edu/$\scriptstyle\mathtt{\sim}$stelleg}}
 \normalsize
 
 \vspace{1em}
@@ -71,21 +71,22 @@ call-by-need compilers, network models, control flow analysis, and type theory}
 \normalsize
 
 \header{Invited Talks} 
-\entry{Feb. 2019}{Concurrency in LLVM} 
+\entry{2019}{Concurrency in LLVM} 
 {\textsc{SIAM CSE 2019}}
-\entry{Jan. 2019}{LLVM and LANL ATDM} 
+\entry{}{LLVM and LANL ATDM} 
 {\textsc{ECP 2019 Annual Meeting}}
-\entry{Sep. 2018}{Preventing Data Races with Refinement Types} 
+\entry{2018}{Preventing Data Races with Refinement Types} 
 {\textsc{FHPC 2018}}
-\entry{Sep. 2018}{Verifiably Lazy: Verified Compilation of Call-by-Need} 
+\entry{}{Verifiably Lazy: Verified Compilation of Call-by-Need} 
 {\textsc{IFL 2018}}
-\entry{Nov. 2017}{OpenMPIR: Impelementing OpenMP Tasks with Tapir}
+\entry{2017}{OpenMPIR: Impelementing OpenMP Tasks with Tapir}
 {\textsc{LLVM-HPC 2017}}
-\entry{Jan. 2017}{Programming Quantum Annealers}
+\entry{}{Programming Quantum Annealers}
 {\textsc{OBT 2017}}
+\entry{2016}{Cactus Environment Machine}
+{\textsc{TFP 2016}}
 
-
-\header{Software Projects} 
+\header{Software} 
 \entry{2017-Present}{Kitsune $\bullet$ \textit{\small{Lead Developer}}}
 {\textsc{Contribution:} Multiple frontends and backends to Tapir\\ 
 \url{https://github.com/lanl/kitsune}}
@@ -104,24 +105,25 @@ compiler and a verified compiler \\
 \url{https://github.com/stelleg/equites}}
 \entry{2017-2018}{Lightweight 3D Printer Interface $\bullet$
 \textit{\small{Creator}}}
-{\textsc{Contribution:} Low resource gcode communication pipe \\ 
+{\textsc{Contribution:} Low resource G-code communication pipe \\ 
 \url{https://github.com/stelleg/l3dp}}
 \entry{2017}{Coq $\bullet$ \textit{\small{Contributor}}} 
-{\textsc{Contribution:} Misc. vector functions and lemmas \\ 
+{\textsc{Contribution:} Misc. vector functions and lemmas to standard library\\ 
 \url{https://github.com/coq/coq}}
 \entry{2017}{HSAPI $\bullet$ \textit{\small{Creator}}}
 {\textsc{Contribution:} Haskell bindings to D-Wave SAPI interface \\
 \url{https://github.com/lanl/hsapi}}
-\entry{2012}{Braids in Classical Dynamics $\bullet$ \textit{\small{Creator}}}
+\entry{2011}{Braids in Classical Dynamics $\bullet$ \textit{\small{Creator}}}
 {\textsc{Contribution:} Implementation of gradient descent algorithm to find
 fixed point solutions to 2D n-body problems starting with a drawing \\
 \url{http://cs.unm.edu/~stelleg/braids}}
 
 \header{Language Skills}
 
-\entry{Basic}{Java, Scala, Fortran}{}
-\entry{Intermediate}{Python, Javascript, \LaTeX, HTML}{}
-\entry{Advanced}{Haskell, C, C++, x86\_64, Coq}
+\entry{Basic}{Java $\cdot$ Fortran $\cdot$ Javascript $\cdot$ \LaTeX $\cdot$
+BASH $\cdot$ HTML}{}
+\entry{Advanced}{Coq $\cdot$ Haskell $\cdot$ C $\cdot$ Python $\cdot$ C++
+$\cdot$ x86\_64}
 
 \end{cv}
 
