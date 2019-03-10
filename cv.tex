@@ -1,110 +1,127 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Classicthesis-Styled CV
-% LaTeX Template
-% Version 1.0 (22/2/13)
-%
-% This template has been downloaded from:
-% http://www.LaTeXTemplates.com
-%
-% Original author:
-% Alessandro Plasmati
-%
-% License:
-% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%----------------------------------------------------------------------------------------
-%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
-%----------------------------------------------------------------------------------------
-
 \documentclass{scrartcl}
-
-\reversemarginpar % Move the margin to the left of the page 
-
-\newcommand{\leftmarg}[1]{\marginpar{\raggedleft\itshape\small#1}} 
-\newcommand{\header}[1]{\vspace{1em}\noindent\textcolor{Maroon}
-{\spacedlowsmallcaps{#1}}\vspace{1em}}
 
 \usepackage{bibentry}
 \makeatletter\let\saved@bibitem\@bibitem\makeatother
 \usepackage[nochapters]{classicthesis} 
 \makeatletter\let\@bibitem\saved@bibitem\makeatother
-\usepackage[LabelsAligned]{currvita} % Use the currvita style for the layout of the document
+\usepackage[LabelsAligned]{currvita} 
 \usepackage{fontawesome}
 \usepackage{amsmath}
+\usepackage{inconsolata}
 
+\newcommand{\leftmarg}[1]{\marginpar{\raggedleft\itshape\small#1}} 
+\newcommand{\header}[1]{\vspace{1em}\noindent\textcolor{Maroon}{\spacedlowsmallcaps{#1}}\par\vspace{1em}}
 \renewcommand{\cvheadingfont}{\LARGE\color{Maroon}} % Font color of your name at the top
+\newcommand{\entry}[3]{\noindent\hangindent=2em\hangafter=0\leftmarg{#1}#2\par\hangindent=2em\hangafter=0\noindent\raggedright\footnotesize{#3}\par\normalsize\vspace{1em}} 
 
-\hypersetup{colorlinks, breaklinks} % Set link colors
-
-\newlength{\datebox}\settowidth{\datebox}{Spring 2011} % Set the width of the date box in each block
-
-\newcommand{\entry}[2]{\noindent\hangindent=2em\hangafter=0\leftmarg{#1}#2}
-\newcommand{\NewEntry}[3]{\noindent\hangindent=2em\hangafter=0\parbox{\datebox}{\small
-\textit{#1}}\hspace{1.5em} \leftmarg{#2} #3 % Define a command for each new block - change spacing and font sizes here: #1 is the left margin, #2 is the italic date field and #3 is the position/employer/location field
-\vspace{0.5em}} % Add some white space after each new entry
-
-\newcommand{\entrydetails}[1]{\hangindent=2em\hangafter=0\noindent\raggedright\footnotesize{#1}\par\normalsize\vspace{1em}} % Define a command for entrydetailss of each entry - change spacing and font sizes here
-
-%----------------------------------------------------------------------------------------
+\reversemarginpar 
+\hypersetup{hidelinks} 
 
 \begin{document}
 
-\thispagestyle{empty} % Stop the page count at the bottom of the first page
+\thispagestyle{empty} 
 
 \begin{cv}{\spacedallcaps{George Stelle}} \vspace{1em} % Your name
-\noindent\faEnvelopeO $\;$ stelleg@lanl.gov $\cdotp$ \faPhone $\;$ +1 (505) 750 8506
+\noindent
+\footnotesize
+\faEnvelopeO $\;$ \href{mailto:stelleg@lanl.gov}{\texttt{stelleg@lanl.gov}}
+$\; \bullet \; $ 
+\faPhone $\;$ \href{tel:15057508506}{+1 (505) 750 8506} 
+$\; \bullet \; $ 
+\faGlobe $\;$
+\href{http://cs.unm.edu/~stelleg}{\texttt{cs.unm.edu/$\scriptstyle\mathtt{\sim}$stelleg}}
+\normalsize
+
 \vspace{1em}
 
 \header{Employment} 
 
-\entry{2016-Present}{Scientist II} \\
-\entrydetails{\textsc{Los Alamos National Laboratory} \\ Research and develop compilers and programming languages for high
-performance supercomputers}
-\entry{2013-2016}{Graduate Student Researcher} \\
-\entrydetails{\textsc{Sandia National Laboratories} \\ Research and develop
+\entry{2016-Present}{Staff Scientist}
+{\textsc{Los Alamos National Laboratory} \\ Research and develop compilers and
+programming languages for high performance computing}
+\entry{2013-2016}{Graduate Student Researcher} 
+{\textsc{Sandia National Laboratories} \\ Research and develop
 lightweight threading libraries for high performance computing on NUMA
 architectures}
-\entry{2009-2013}{Graduate Research Assistant} \\
-\entrydetails{\textsc{University of New Mexico} \\ Research and develop
-call-by-need compilers, network growth models, control flow analysis, and type
-systems}
+\entry{2009-2013}{Graduate Research Assistant} 
+{\textsc{University of New Mexico} \\ Research and develop
+call-by-need compilers, network models, control flow analysis, and type theory}
 
-\header{Education} \\
-\entry{April 2019}{\textsc{PhD} $:$ Computer Science} \\
-\entrydetails{\textsc{University of New Mexico} $\boldsymbol{\cdot}$ Department of Computer Science} 
-\entry{Nov. 2013}{\textsc{MS} $:$ Computer Science} \\
-\entrydetails{\textsc{University of New Mexico} $\boldsymbol{\cdot}$ Department of Computer Science}
-\entry{June 2008}{\textsc{BS} $:$ Computational Intelligence and Design}\\
-\entrydetails{\textsc{University of British Columbia} $\boldsymbol{\cdot}$ Department of Cognitive Systems}
+\header{Education} 
+\entry{2019}{\textsc{PhD} $:$ Computer Science} 
+{\textsc{University of New Mexico} $\bullet$ Department of Computer Science \\ 
+\textsc{Thesis:} Shared-Environment Call-by-Need $\bullet$ \textsc{Advisor:} Darko Stefanovic} 
+\entry{2013}{\textsc{MS} $:$ Computer Science} 
+{\textsc{University of New Mexico} $\bullet$ Department of Computer Science \\ 
+\textsc{Advisor:} Stephanie Forrest}
+\entry{2008}{\textsc{BS} $:$ Computational Intelligence and Design}
+{\textsc{University of British Columbia} $\bullet$ Department of Cognitive Systems}
 
-\header{Dissertation} \\
-\entry{April 2019}{Shared-Environment Call-by-Need} \\
-\entrydetails{\textsc{Advisor:} Darko Stefanovic}
-
-\header{Publications} \\ % \vspace{-5em}
+\header{Publications} 
 \bibliographystyle{unsrt}
 \nobibliography{ref}
-\entry{2018}{\small{\bibentry{stelle2018verifiably}}} \\ \vspace{0.5em}
-\entry{}{\small{\bibentry{lee2018correctness}}} \\ \vspace{0.5em}
-\entry{2017}{\small{\bibentry{stelle2017openmpir}}} \\ \vspace{0.5em}
-\entry{}{\small{\bibentry{evans2017scheduling}}} \\ \vspace{0.5em}
-\entry{2016}{\small{\bibentry{stelle2016cem}}} \\ \vspace{0.5em}
-\entry{2014}{\small{\bibentry{stelle2014hardware}}} \\ \vspace{0.5em}
-\entry{2013}{\small{\bibentry{hofmeyr2013modeling}}} \\ \vspace{0.5em}
-\entry{2012}{\small{\bibentry{edwards2012beyond}}} \\ \vspace{1em}
-\normal
+\entry{2018}{\footnotesize\bibentry{stelle2018verifiably}}{}
+\entry{}{\footnotesize\bibentry{lee2018correctness}}{}
+\entry{2017}{\footnotesize\bibentry{stelle2017openmpir}}{}
+\entry{}{\footnotesize\bibentry{evans2017scheduling}}{}
+\entry{2016}{\footnotesize\bibentry{stelle2016cem}}{}
+\entry{2014}{\footnotesize\bibentry{stelle2014hardware}}{}
+\entry{2013}{\footnotesize\bibentry{hofmeyr2013modeling}}{} 
+\entry{2012}{\footnotesize\bibentry{edwards2012beyond}}{}
+\normalsize
 
-\header{Invited Talks} \\
-\entry{2018}{Verifiably Lazy: Verified Compilation of Call-by-Need} \\
-\entrydetails{\textsc{IFL 2018}}
+\header{Invited Talks} 
+\entry{Feb. 2019}{Concurrency in LLVM} 
+{\textsc{SIAM CSE 2019}}
+\entry{Jan. 2019}{LLVM and LANL ATDM} 
+{\textsc{ECP 2019 Annual Meeting}}
+\entry{Sep. 2018}{Preventing Data Races with Refinement Types} 
+{\textsc{FHPC 2018}}
+\entry{Sep. 2018}{Verifiably Lazy: Verified Compilation of Call-by-Need} 
+{\textsc{IFL 2018}}
+\entry{Nov. 2017}{OpenMPIR: Impelementing OpenMP Tasks with Tapir}
+{\textsc{LLVM-HPC 2017}}
+\entry{Jan. 2017}{Programming Quantum Annealers}
+{\textsc{OBT 2017}}
+
+
+\header{Software Projects} 
+\entry{2017-Present}{Kitsune $\bullet$ \textit{\small{Lead Developer}}}
+{\textsc{Contribution:} Multiple frontends and backends to Tapir\\ 
+\url{https://github.com/lanl/kitsune}}
+\entry{2017-Present}{Tapir $\bullet$ \textit{\small{Contributor}}}
+{\textsc{Contribution:} Multiple backends, bug fixes \\ 
+\url{https://github.com/wsmoses/tapir-llvm}
+\url{https://github.com/wsmosts/tapir-clang}}
+\entry{2012-2018}{Cactus Environment Machine $\bullet$
+\textit{\small{Creator}}}
+{\textsc{Contribution:} Shared-environment call-by-need implementations, including a native code
+compiler and a verified compiler \\ 
+\url{https://github.com/stelleg/cem} $\bullet$
+\url{https://github.com/stelleg/cem\_coq}}
+\entry{2018}{Equites $\bullet$ \textit{\small{Creator}}}
+{\textsc{Contribution:} High level, type-safe interface to legion \\ 
+\url{https://github.com/stelleg/equites}}
+\entry{2017-2018}{Lightweight 3D Printer Interface $\bullet$
+\textit{\small{Creator}}}
+{\textsc{Contribution:} Low resource gcode communication pipe \\ 
+\url{https://github.com/stelleg/l3dp}}
+\entry{2017}{Coq $\bullet$ \textit{\small{Contributor}}} 
+{\textsc{Contribution:} Misc. vector functions and lemmas \\ 
+\url{https://github.com/coq/coq}}
+\entry{2017}{HSAPI $\bullet$ \textit{\small{Creator}}}
+{\textsc{Contribution:} Haskell bindings to D-Wave SAPI interface \\
+\url{https://github.com/lanl/hsapi}}
+\entry{2012}{Braids in Classical Dynamics $\bullet$ \textit{\small{Creator}}}
+{\textsc{Contribution:} Implementation of gradient descent algorithm to find
+fixed point solutions to 2D n-body problems starting with a drawing \\
+\url{http://cs.unm.edu/~stelleg/braids}}
 
 \header{Language Skills}
 
-\entrydetails{\leftmarg{Basic} Java, Scala, Fortran} 
-\entrydetails{\leftmarg{Intermediate} Python, Javascript, \LaTeX, HTML} 
-\entrydetails{\leftmarg{Advanced} Haskell, C, C++, x86\_64, Coq}
+\entry{Basic}{Java, Scala, Fortran}{}
+\entry{Intermediate}{Python, Javascript, \LaTeX, HTML}{}
+\entry{Advanced}{Haskell, C, C++, x86\_64, Coq}
 
 \end{cv}
 
